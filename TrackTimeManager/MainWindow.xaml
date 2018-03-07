@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrackTimeManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" MinHeight="350" MinWidth="525" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="NameAreas" Grid.Column="0" Grid.Row="0" Margin="5,5">
+
+        </ListBox>
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Margin="10" HorizontalAlignment="Center">
+            <Button MinWidth="100" Margin="0,0,10,0">Track</Button>
+            <Button MinWidth="100" Margin="10,0,0,0">Stop</Button>
+        </StackPanel>
+        <TextBlock Name="InformTextBlock" Grid.Column="1" Grid.RowSpan="2" Text="Название области - КУРВА МАТКА" TextWrapping="Wrap"/>
+
     </Grid>
 </Window>
