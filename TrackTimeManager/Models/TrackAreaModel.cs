@@ -11,10 +11,5 @@ namespace TrackTimeManager.Models
         public int id { get; set; }
         public string AreaName { get; set; }
         public string TotalTime { get; set; }
-
-        public TrackAreaModel()
-        {
-            //fsdfsdfsdf
-        }
     }
 }
