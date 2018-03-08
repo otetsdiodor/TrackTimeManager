@@ -39,5 +39,16 @@ namespace TrackTimeManager.Services
             sqlConnection.Close();
             return result;
         }
+
+        public void ChangeData(TrackAreaModel trackArea)
+        {
+            SqlConnection sqlConnection = new SqlConnection(ConnectionString);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand("UPDATE TrackAreas SET TotalTime = @ParamTime WHERE AreaName = @ParamName", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@ParamTime",trackArea.TotalTime);
+            sqlCommand.Parameters.AddWithValue("@ParamName",trackArea.AreaName);
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
     }
 }

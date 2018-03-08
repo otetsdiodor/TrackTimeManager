@@ -17,11 +17,19 @@ namespace TrackTimeManager.Services
 
         #region Prop
 
-        public double TotalTime
+        public double GetTotalTimeInDouble
         {
             get
             {
                 return totalTime.TotalMinutes;
+            }
+        }
+
+        public string GetTimeSpanString
+        {
+            get
+            {
+                return totalTime.ToString();
             }
         }
 

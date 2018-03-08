@@ -57,7 +57,8 @@ namespace TrackTimeManager
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
             tracker.Track();
-            InformTextBlock.Text = "Общее натреканное время - " + tracker.TotalTime;
+            dbService.ChangeData(Areas[AreasName.SelectedIndex]);
+            InformTextBlock.Text = "Общее натреканное время - " + tracker.GetTotalTimeInDouble;
         }
     }
 }
