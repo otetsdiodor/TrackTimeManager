@@ -20,8 +20,8 @@
 
         </ListBox>
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Margin="10" HorizontalAlignment="Center">
-            <Button MinWidth="100" Margin="0,0,10,0">Track</Button>
-            <Button MinWidth="100" Margin="10,0,0,0">Stop</Button>
+            <Button MinWidth="100" Margin="0,0,10,0" Click="BtnTrack_Click">Track</Button>
+            <Button MinWidth="100" Margin="10,0,0,0" Click="BtnStop_Click">Stop</Button>
         </StackPanel>
         <TextBlock Name="InformTextBlock" Grid.Column="1" Grid.RowSpan="2" Text="Название области - КУРВА МАТКА" TextWrapping="Wrap"/>
 
