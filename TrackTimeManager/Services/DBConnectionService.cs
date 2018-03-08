@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace TrackTimeManager.Services
 {
-    class DBConnectionService
+    public class DBConnectionService
     {
         static string ConnectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
