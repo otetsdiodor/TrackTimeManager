@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace TrackTimeManager.Models
 {
-    class TrackAreaModel
+    public class TrackAreaModel
     {
         public int id { get; set; }
         public string AreaName { get; set; }
-        public string TotalTime { get; set; }
+        public TimeSpan TotalTime = new TimeSpan(0, 0, 0);
+
+        public TrackAreaModel(string areaName,string totalTime)
+        {
+            AreaName = areaName;
+            TimeSpan.TryParse(totalTime,out TotalTime);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using TrackTimeManager.Models;
 
 namespace TrackTimeManager.Services
 {
@@ -16,9 +17,9 @@ namespace TrackTimeManager.Services
             return new SqlConnection();
         }
 
-        public List<string> ReadData()
+        public List<TrackAreaModel> ReadData()
         {
-            List<string> result = new List<string>();
+            List<TrackAreaModel> result = new List<TrackAreaModel>();
             SqlConnection sqlConnection = new SqlConnection(ConnectionString);
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM TrackAreas",sqlConnection);
@@ -28,7 +29,9 @@ namespace TrackTimeManager.Services
             {
                 while (sqlDataReader.Read())
                 {
-                    result.Add((string)sqlDataReader.GetValue(1));
+                    string name = sqlDataReader.GetString(1);
+                    string totalTime = sqlDataReader.GetString(2);
+                    result.Add(new TrackAreaModel(name,totalTime));
                 }
                 sqlConnection.Close();
                 return result;
