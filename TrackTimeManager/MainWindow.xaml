@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrackTimeManager"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="350" MinWidth="525" Height="350" Width="525">
+        Title="MainWindow" MinHeight="350" MinWidth="525" Height="350" Width="525" Loaded="MainWindow_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -16,7 +16,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox Name="NameAreas" Grid.Column="0" Grid.Row="0" Margin="5,5">
+        <ListBox Name="AreasName" Grid.Column="0" Grid.Row="0" Margin="5,5">
 
         </ListBox>
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Margin="10" HorizontalAlignment="Center">
